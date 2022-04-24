@@ -3,7 +3,15 @@ import Form from './form.js'
 import Input from './input.js'
 import Button from './button.js'
 import store from '../store.js'
+import styled from '../lib/styled-components.js'
 import { SEARCH_MOVIE, SET_FILTER } from '../actions/index.js'
+
+const ImagenButton = styled.img`
+  // width: 200px;
+  // position: relative;
+  // top: 20px;
+  // filter: drop-shadow(3px 3px 0 #f2a30c);
+`
 
 class Search extends Component {
   handleSubmit = (event) => {
@@ -22,15 +30,21 @@ class Search extends Component {
     })
   }
   render() {
-    return Form({
+    return Form({              
+      class: 'searchForm',
       onSubmit: this.handleSubmit,
       children: [
         new Input({
+          id: 'inputSearchId',
           placeholder: 'Escribe tu película favorita',
           name: 'title',
-          type: 'text'
+          type: 'text',
         }),
-        new Button(null, 'Buscar')
+        new Button({
+          children: [
+            ImagenButton({src: '../../icons/icon-search.svg'})
+          ]
+        })
       ]
     })
   }

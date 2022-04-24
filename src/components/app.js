@@ -6,20 +6,22 @@ import Search from './search.js'
 import Filters from './filters.js'
 import MovieList from './movie-list.js'
 
-const AppStyled = styled.div``
+const AppStyled = styled.div`
+  overflow: hidden;
+`
 
 class App extends Component {
   render() {
     return AppStyled({
       children: [
         new Header(),
-        new Actions({
-          children: [
-            new Search(),
-            new Filters(),
-          ]
-        }),
-	new MovieList()
+        // new Actions({
+        //   children: [
+        //     new Search(),
+        //     new Filters(),
+        //   ]
+        // }),
+	      new MovieList()
       ]
     })
   }
