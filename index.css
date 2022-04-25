@@ -3,12 +3,12 @@
 
     /* Colors */
     --black: #000000;
-    --black-hover: hsl(0, 0%, 20%);
     --white: #ffffff;
     --backgroundHeader: #0f0e17; 
     --bg-alt: #161422;
     --primary: #fed941;
-    --primary-hover: hsl(48, 99%, 70%);
+    --bakcground-btnBlack: #0C0E16;
+    /* --primary-hover: hsl(48, 99%, 70%); */
     --grey: #a7a9be;
   
    
@@ -23,6 +23,7 @@
     --body2: 400 16px/22px var(--fontPrimary);
     --body2-bold: 700 16px/22px var(--fontPrimary);
     --button: 700 18px/28px var(--fontPrimary);
+    --linkSlider: 700 16px/19px var(--fontPrimary);
     --caption: 400 12px/22px var(--fontPrimary);
 
     

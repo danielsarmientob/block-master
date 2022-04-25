@@ -27,6 +27,7 @@ class MovieList extends Component {
     })
   }
   handleIntersection = (entries) => {
+    console.log('holaaaa')
     if(entries[0].isIntersecting) {
       this.getPage(this.state.page)
       this.setState({

@@ -5,6 +5,7 @@ import Actions from './actions.js'
 import Search from './search.js'
 import Filters from './filters.js'
 import MovieList from './movie-list.js'
+import Slider from './slider.js'
 
 const AppStyled = styled.div`
   overflow: hidden;
@@ -15,6 +16,7 @@ class App extends Component {
     return AppStyled({
       children: [
         new Header(),
+        new Slider(),
         // new Actions({
         //   children: [
         //     new Search(),

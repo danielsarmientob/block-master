@@ -141,8 +141,126 @@ body {
   text-decoration: underline;
 }
 
+.slider {
+  /* margin-inline-start: 2rem; */
+  text-align: center;
+  margin-block-end: 3.5rem;
+  position: relative;
+}
+.slider-container {
+  position: relative;
+  display: block;
+  overflow: auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Para borrar la barra de scrool horizontal*/
+  white-space: nowrap;  /* Para que no salten a la siguiente linea*/
+  font-size: 0;
+}
+.slider-slide {
+  margin: auto;
+  display: inline-block;
+  inline-size: 95%;
+  box-sizing: border-box;
+}
+.slider-slide2 {
+  position: absolute;
+  transform: translate(1%);
+  display: inline-block;
+  inline-size: 95%;
+  box-sizing: border-box;
+}
+.slider-slide3 {
+  position: absolute;
+  transform: translate(102%);
+  /* transform: translate(0); */
+
+  display: inline-block;
+  inline-size: 95%;
+  box-sizing: border-box;
+  margin-inline-end: 90px;
+}
+
+.slider-slide4 {
+  position: absolute;
+  transform: translate(250%);
+  /* transform: translate(0); */
+
+  display: inline-block;
+  inline-size: 95%;
+  box-sizing: border-box;
+  margin-inline-end: 90px;
+}
+
+.img {
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  /* aspect-ratio: 16/9; */
+}
+
+.slider-bullet-list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  margin-block-start: 0.875rem;
+}
+.slider-bullet {
+  display: inline-block;
+  inline-size: 0.875rem;
+  block-size: 0.875rem;
+  background: white;
+  border-radius: 50%;
+  background: var(--grey);
+  cursor: pointer;
+}
+
+#slider-bullet1{
+  background: var(--white);
+}
+
+.contButtonsSlider{
+  position: absolute;
+  bottom: 3rem;
+  left: 4rem;
+  display: flex;
+  gap: 1rem;
+}
+.buttonSlider {
+  min-inline-size: 12rem;
+  inline-size: 100%;
+  block-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .25rem;
+  cursor: pointer;
+  font: var(--button);
+  transition: transform .3s;
+  user-select: none;
+  gap: .5rem;
+}
+
+.buttonSlider:active {
+  transform: scale(.95);
+}
+
+.btn-yellow{
+  background: var(--primary);
+}
+
+.btn-black{
+  background: var(--bakcground-btnBlack);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  box-sizing: border-box;
+}
+
 @media  screen and (max-width: 990px) {
-  
+  .headerLogo{
+    block-size: 2.5rem;
+  }
   .linkHeader,
   .searchForm {
     display: none;
@@ -195,16 +313,15 @@ body {
   .headerSmallMenu.headerSmallMenuOpen {
     transform: translate(0);
   }
+  .contButtonsSlider{
+    display: none;
+  }
 }
 @media  screen and (min-width: 990px) {
  
   .linkHeader,
   .searchForm {
     display: block;
-  }
-
-  #wrapper {
-    padding-inline: 2rem;
   }
 
   .searchForm{

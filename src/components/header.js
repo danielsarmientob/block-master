@@ -11,30 +11,23 @@ const HeaderStyled = styled.header`
   background: var(--backgroundHeader);
   margin-bottom: 2em;
   block-size: 7rem;
-  // inlien-size: 1500px;
-  // text-align: center;
   display: flex;
   position: relative;
 `
 
 const HeaderLogo = styled.img`
-  // width: 200px;
   position: relative;
-  // top: 20px;
-  // filter: drop-shadow(3px 3px 0 #f2a30c);
 `
 
 const HeaderContain = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 3rem;
-  // background: red;
   inline-size: 100%;
   align-items: center;
   block-size: 7rem;
   position: relative;
   overflow: hidden;
-  // filter: drop-shadow(3px 3px 0 #f2a30c);
 `
 
 const HeaderMenuSmall = styled.div`
@@ -125,7 +118,10 @@ class Header extends Component {
           id: 'wrapper',
           children: HeaderContain({
             children: [
-              HeaderLogo({ src: './images/logo.png' }),
+              HeaderLogo({ 
+                class: 'headerLogo',
+                src: './images/logo.png' 
+              }),
               new LinkHeader({
                 class: 'linkHeader',
                 onclick: ()=>this.handleFiltro('headerTodos'),
