@@ -20,6 +20,7 @@ class MovieList extends Component {
     page: 1,
   }
   getPage = async (page) => {
+    
     const { results } = await api.moviePage(page)
     store.dispatch({
       type: ADD_MOVIES,
@@ -27,12 +28,17 @@ class MovieList extends Component {
     })
   }
   handleIntersection = (entries) => {
-    console.log('holaaaa')
     if(entries[0].isIntersecting) {
-      this.getPage(this.state.page)
-      this.setState({
-        page: this.state.page + 1
-      })
+      const imgCarga = document.getElementById('contImgCarga');
+      imgCarga.style.display =  'block';  
+      setTimeout(() => {
+        this.getPage(this.state.page)
+        this.setState({
+          page: this.state.page + 1
+        })
+        imgCarga.style.display =  'none';
+        
+      }, 500);
     }
   }
   componentDidMount() {
@@ -40,7 +46,13 @@ class MovieList extends Component {
     store.subscribe(() => {
       this.setState()
     })
-    const observer = new IntersectionObserver(this.handleIntersection)
+    
+    let options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0
+    }
+    const observer = new IntersectionObserver(this.handleIntersection,options)
     observer.observe(window.intersector)
     // debugger
   }  
