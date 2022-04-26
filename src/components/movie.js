@@ -10,14 +10,19 @@ class Movie extends Component {
           class: 'movie-poster',
           src: `//image.tmdb.org/t/p/w220_and_h330_face${poster_path}`
         }),
-        createElement('p', {
-          class: 'movie-title',
-        }, title),
-        createElement('p', {
-          class: 'movie-id',
-        }, id),
+        // createElement('p', {
+        //   class: 'movie-title',
+        // }, title),
+        // createElement('p', {
+        //   class: 'movie-id',
+        // }, id),
         createElement('span', {
           class: 'movie-rate',
+          children:[
+            createElement('img',{
+              src: '../../icons/estrella.svg'
+            },)
+          ]
         }, vote_average)
       ]
     })

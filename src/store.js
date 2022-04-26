@@ -15,7 +15,10 @@ const initialState = {
     all: getAllIds(movies),
     mostValued: getMostValuedIds(movies),
     leastValued: getLeastValuedIds(movies),
-  }
+  },
+  search: [],
+  isQuery: false,
+  query: ''
 }
 
 const store = createStore(reducer, initialState)

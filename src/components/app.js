@@ -1,4 +1,4 @@
-import { Component } from '../lib/react/index.js'
+import { Component, createElement } from '../lib/react/index.js'
 import styled from '../lib/styled-components.js'
 import Header from './header.js'
 import Actions from './actions.js'
@@ -8,6 +8,7 @@ import MovieList from './movie-list.js'
 import Slider from './slider.js'
 
 import store from '../store.js';
+
 const AppStyled = styled.div`
   overflow: hidden;
 `
@@ -15,6 +16,10 @@ const contImgCarga = styled.div`
   text-align: center;
 `
 const Spin = styled.div``
+const img = styled.img``
+
+const contImgNoEncontrado = styled.div`
+`
 
 class App extends Component {
   render() {
@@ -37,6 +42,17 @@ class App extends Component {
               id: 'imgCarga',
             }),
         }),
+        contImgNoEncontrado({
+          class: 'contNoEncontrado',
+          children: [
+            img({
+              src: '../../images/Searching.png'
+            }),
+            createElement('span',{
+              class: 'spanImgNoEncontrada'
+            },'')
+          ]
+        })
       ]
     })
   }

@@ -30,15 +30,25 @@ class MovieList extends Component {
   handleIntersection = (entries) => {
     if(entries[0].isIntersecting) {
       const imgCarga = document.getElementById('contImgCarga');
-      imgCarga.style.display =  'block';  
-      setTimeout(() => {
-        this.getPage(this.state.page)
-        this.setState({
-          page: this.state.page + 1
-        })
-        imgCarga.style.display =  'none';
-        
-      }, 500);
+      const {search, isQuery} = store.getState();
+      if( !isQuery ) {
+        imgCarga.style.display =  'block';  
+        setTimeout(() => {
+          this.getPage(this.state.page)
+          this.setState({
+            page: this.state.page + 1
+          })
+          imgCarga.style.display =  'none';
+          
+        }, 500);
+      }else {
+        // if(search.length === 0) {
+        //   // TODO: hacer aparecer la imagen de no encontrado
+        //   // const imgNoEncontrado = document.querySelector('.contNoEncontrado');
+        //   // imgNoEncontrado.style.display = 'flex';
+        //   // console.log('debug',search?.length)
+        // }
+      }
     }
   }
   componentDidMount() {
@@ -60,7 +70,9 @@ class MovieList extends Component {
     const state = store.getState()
     const movieListId = state.list[state.filter]
     const movieList = state.movieList
+    const {search} =  state;
     console.log(state)
+   
     return Wrapper({
       children: MovieListStyled({
         children: movieListId.map(id => new Movie(movieList.get(id)))

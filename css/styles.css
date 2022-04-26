@@ -82,22 +82,25 @@ body {
   .movie {
     position: relative;
     transition: 1s;
+    cursor: pointer;
   }
   .movie.recommended img {
-    border: 2px solid goldenrod;
+    /* border: 2px solid goldenrod; */
     box-sizing: border-box;
-    perspective-origin: top;
-    animation: recommended 1s forwards;
+    /* perspective-origin: top;
+    animation: recommended 1s forwards; */
   }
   
-  @keyframes recommended {
+  /* @keyframes recommended {
     to {
       transform: perspective(500px) rotate3d(0, -1, 0, 25deg);
     }
-  }
+  } */
   .movie.recommended .movie-rate {
-    background-color: goldenrod;
-    box-shadow: 0 0 0 2px goldenrod;
+    /* background-color: goldenrod; */
+    /* box-shadow: 0 0 0 2px goldenrod; */
+    border: 2px solid var(--primary);
+    border-left: none;
   }
   
   .movie-poster {
@@ -111,19 +114,24 @@ body {
   }
   
   .movie-rate {
+    font: var(--headline3);
     position: absolute;
-    left: 1em;
+    left: 0;
     top: 1em;
-    background: #839eff;
+    background: rgba(0, 0, 0, .5);
     color: white;
-    width: 40px;
-    height: 40px;
     display: flex;
+    gap: .5rem;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 0 0 2px #3f69ff;
+    flex-direction: row-reverse;
+    border: 2px solid var(--blue-app);
+    border-left: 0px;
+    padding: .25rem .5rem;
+    border-radius: 0 20px 20px 0;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
   }
 
 
@@ -279,6 +287,24 @@ body {
   }
 }
 
+.contNoEncontrado {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+  font: var(--body1-bold);
+  margin-block-end: 1rem;
+}
+
+.contNoEncontrado img {
+  inline-size: 250px;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.spanImgNoEncontrada {
+  text-align: center;
+}
 
 @media  screen and (max-width: 990px) {
   .headerLogo{
@@ -359,4 +385,19 @@ body {
   .headerSmallMenu {
     display: none;
   }
+
+  .movie-rate {
+    border-left: 0px;
+    padding: .5rem 1rem;
+    border-radius: 0 20px 20px 0;
+  }
+  
+  .contNoEncontrado {
+    font: var(--headline3);
+  }
+  .contNoEncontrado img {
+    inline-size: auto;
+  }
+  
+ 
 }

@@ -7,6 +7,7 @@
     --backgroundHeader: #0f0e17; 
     --bg-alt: #161422;
     --primary: #fed941;
+    --blue-app: #0E3FA9;
     --bakcground-btnBlack: #0C0E16;
     /* --primary-hover: hsl(48, 99%, 70%); */
     --grey: #a7a9be;
@@ -15,8 +16,8 @@
    
     --headline1: 700 48px/58px var(--fontPrimary);
     --headline2: 700 46px/56px var(--fontPrimary);
-    --headline3: 700 37px/31.5px var(--fontPrimary);
-    --headline4: 700 28px/34.13px var(--fontPrimary);
+    --headline3: 700 28px/34.13px var(--fontPrimary);
+    --headline4: 700 37px/31.5px var(--fontPrimary);
     --headline5: 700 25px/30.48px var(--fontPrimary);
     --body1: 400 18px/27px var(--fontPrimary);
     --body1-bold: 700 18px/27px var(--fontPrimary);
@@ -29,6 +30,12 @@
     
     --height-header: 3.5rem;
     --height-input-header: 2.75rem;
+    --xlg: 2rem;
+    --xxlg: 2.5rem;
+    --xs: 0.25rem;
+    --md: 1rem;
+    --sm: 0.5rem;
+    --top-card: var(--sm);
     /* Sizes */
     /* --xs: 0.25rem;
     --sm: 0.5rem;

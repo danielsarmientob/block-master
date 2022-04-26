@@ -73,6 +73,9 @@ class Header extends Component {
     const  masValorados_a = document.getElementById('headerMasValorados-a');
     const  menosValorados_a = document.getElementById('headerMenosValorados-a');
     const smallMenu = document.getElementById('smallMenu');
+    
+    // Esconder img "no encontro resultados"
+    document.querySelector('.contNoEncontrado').style.display = 'none';
     switch(id){
       case 'headerTodos':
         todos.classList.add('isActive');

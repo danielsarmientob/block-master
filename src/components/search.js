@@ -6,6 +6,7 @@ import store from '../store.js'
 import styled from '../lib/styled-components.js'
 import { SEARCH_MOVIE, SET_FILTER } from '../actions/index.js'
 
+
 const ImagenButton = styled.img`
   // width: 200px;
   // position: relative;
@@ -19,15 +20,31 @@ class Search extends Component {
     const formData = new FormData(event.target)
     const query = formData.get('title')
     if (query) {
-      return store.dispatch({
+      store.dispatch({
         type: SEARCH_MOVIE,
         payload: query
       })
+      const state = store.getState();
+      const {search} =  state;
+      console.log('debug->', search)
+      const imgNoEncontrado = document.querySelector('.contNoEncontrado');
+      const msgNoEcontrado = document.querySelector('.spanImgNoEncontrada')
+      console.log('query==>', query)
+      if(search.length === 0) {
+        imgNoEncontrado.style.display = 'flex';
+        msgNoEcontrado.textContent = `No se encontraron resultados para “${query}”`
+      }else{
+        imgNoEncontrado.style.display = 'none';
+      }
+      return 
+    }else{
+      document.querySelector('.contNoEncontrado').style.display = 'none';
     }
     return store.dispatch({
       type: SET_FILTER,
       payload: 'all'
     })
+    
   }
   render() {
     return Form({              

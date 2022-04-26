@@ -45,13 +45,19 @@ const reducer = (state, { type, payload }) => {
           all,
           leastValued,
           mostValued,
-        }
+        },
+        search: [],
+        isQuery: false,
+        query: ''
       }
     }
     case SET_FILTER:
       return {
         ...state,
         filter: payload,
+        search: [],
+        isQuery: false,
+        query: ''
       }
     
     case SEARCH_MOVIE:
@@ -61,7 +67,10 @@ const reducer = (state, { type, payload }) => {
         list: {
           ...state.list,
           search: searchMovie(payload, state.movieList, state.list.all)
-        }
+        },
+        search:  searchMovie(payload, state.movieList, state.list.all),
+        isQuery: true,
+        query: payload
     }
     default:
       return state
