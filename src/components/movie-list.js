@@ -5,6 +5,7 @@ import Movie from './movie.js';
 import store from '../store.js';
 import api from '../api.js'
 import { ADD_MOVIES } from '../actions/index.js'
+import Modal from './modal.js';
 //import movies from '../movies.js';
 
 const MovieListStyled = styled.section`
@@ -30,8 +31,8 @@ class MovieList extends Component {
   handleIntersection = (entries) => {
     if(entries[0].isIntersecting) {
       const imgCarga = document.getElementById('contImgCarga');
-      const {search, isQuery} = store.getState();
-      if( !isQuery ) {
+      const {movieSelect, isQuery} = store.getState();
+      if( (!isQuery) &&  (movieSelect === null)) {
         imgCarga.style.display =  'block';  
         setTimeout(() => {
           this.getPage(this.state.page)
@@ -53,6 +54,7 @@ class MovieList extends Component {
   }
   componentDidMount() {
     // this.getPage(this.state.page)
+    // console.log('SetState',this.setState())
     store.subscribe(() => {
       this.setState()
     })
@@ -70,13 +72,15 @@ class MovieList extends Component {
     const state = store.getState()
     const movieListId = state.list[state.filter]
     const movieList = state.movieList
-    const {search} =  state;
     console.log(state)
-   
+    console.log('debugg==>',movieList.get(718444))
     return Wrapper({
-      children: MovieListStyled({
-        children: movieListId.map(id => new Movie(movieList.get(id)))
-      })
+      children: [
+        MovieListStyled({
+          children: movieListId.map(id => new Movie(movieList.get(id)))
+        }),
+        new Modal()
+      ]
     })
   }
 }

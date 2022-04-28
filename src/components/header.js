@@ -7,6 +7,13 @@ import LinkHeaderSmall from './link-header-small.js'
 import store from '../store.js';
 import { SET_FILTER } from '../actions/index.js'
 
+const HeaderApp = styled.div`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index:2;
+`
+
 const HeaderStyled = styled.header`
   background: var(--backgroundHeader);
   margin-bottom: 2em;
@@ -115,112 +122,118 @@ class Header extends Component {
     }
   }
   render() {
-    return HeaderStyled({
-      children: [
-        Wrapper({
-          id: 'wrapper',
-          children: HeaderContain({
-            children: [
-              HeaderLogo({ 
-                class: 'headerLogo',
-                src: './images/logo.png' 
-              }),
-              new LinkHeader({
-                class: 'linkHeader',
-                onclick: ()=>this.handleFiltro('headerTodos'),
-                children:[
-                  createElement('p', {
-                    id: 'headerTodos',
-                    class: 'isActive',
-                  }, 'Todos')
-                ]
-              }),
-              new LinkHeader({
-                class: 'linkHeader',
-                onclick: ()=>this.handleFiltro('headerMasValorados'),
-                children:[
-                  createElement('p', {
-                    id: 'headerMasValorados',
-                    class: '',
-                  }, 'Más valorados')
-                ]
-              }),
-              new LinkHeader({
-                class: 'linkHeader',
-                onclick: ()=>this.handleFiltro('headerMenosValorados'),
-                children:[
-                  createElement('p', {
-                    id: 'headerMenosValorados',
-                    class: '',
-                  }, 'Menos valorados')
-                ]
-              }),
-              new Search(),
-              HeaderMenuSmall({
-                id: 'headerMenuSmall',
+    return HeaderApp({
+      children:[
+        HeaderStyled({
+          class: 'headerApp',
+          children: [
+            Wrapper({
+              id: 'wrapper',
+              children: HeaderContain({
                 children: [
-                  HeaderMenuSmallIcons({
-                    onclick: this.handleSearchSmall,
-                    src: '../../icons/icon-search-yellow.svg'
+                  HeaderLogo({ 
+                    class: 'headerLogo',
+                    src: './images/logo.png' 
                   }),
-                  HeaderMenuSmallIcons({
-                    onclick: this.handleSmallMenu,
-                    src: '../../icons/menu.svg'
+                  new LinkHeader({
+                    class: 'linkHeader',
+                    onclick: ()=>this.handleFiltro('headerTodos'),
+                    children:[
+                      createElement('p', {
+                        id: 'headerTodos',
+                        class: 'isActive',
+                      }, 'Todos')
+                    ]
                   }),
-                ]
-              }),
-              HeaderSmallInput({
-                class: 'smallSearch',
-                id: 'smallSearch',
-                children: [
-                  HeaderMenuSmallIcons({
-                    onclick: this.handleBack,
-                    src: '../../icons/back.svg'
+                  new LinkHeader({
+                    class: 'linkHeader',
+                    onclick: ()=>this.handleFiltro('headerMasValorados'),
+                    children:[
+                      createElement('p', {
+                        id: 'headerMasValorados',
+                        class: '',
+                      }, 'Más valorados')
+                    ]
+                  }),
+                  new LinkHeader({
+                    class: 'linkHeader',
+                    onclick: ()=>this.handleFiltro('headerMenosValorados'),
+                    children:[
+                      createElement('p', {
+                        id: 'headerMenosValorados',
+                        class: '',
+                      }, 'Menos valorados')
+                    ]
                   }),
                   new Search(),
+                  HeaderMenuSmall({
+                    id: 'headerMenuSmall',
+                    children: [
+                      HeaderMenuSmallIcons({
+                        onclick: this.handleSearchSmall,
+                        src: '../../icons/icon-search-yellow.svg'
+                      }),
+                      HeaderMenuSmallIcons({
+                        onclick: this.handleSmallMenu,
+                        src: '../../icons/menu.svg'
+                      }),
+                    ]
+                  }),
+                  HeaderSmallInput({
+                    class: 'smallSearch',
+                    id: 'smallSearch',
+                    children: [
+                      HeaderMenuSmallIcons({
+                        onclick: this.handleBack,
+                        src: '../../icons/back.svg'
+                      }),
+                      new Search(),
+                    ]
+                  }) 
                 ]
-              }) 
-            ]
-          })
-        }),
-        HeaderSmalMenu({
-          id: 'smallMenu',
-          class: 'headerSmallMenu',
-          children: [
-            new LinkHeaderSmall({
-              class: 'linkHeader-a',
-              onclick: ()=>this.handleFiltro('headerTodos'),
-              children:[
-                createElement('p', {
-                  id: 'headerTodos-a',
-                  class: 'isActive',
-                }, 'Todos')
-              ]
+              })
             }),
-            new LinkHeaderSmall({
-              class: 'linkHeader-a',
-              onclick: ()=>this.handleFiltro('headerMasValorados'),
-              children:[
-                createElement('p', {
-                  id: 'headerMasValorados-a',
-                  class: '',
-                }, 'Más valorados')
+            HeaderSmalMenu({
+              id: 'smallMenu',
+              class: 'headerSmallMenu',
+              children: [
+                new LinkHeaderSmall({
+                  class: 'linkHeader-a',
+                  onclick: ()=>this.handleFiltro('headerTodos'),
+                  children:[
+                    createElement('p', {
+                      id: 'headerTodos-a',
+                      class: 'isActive',
+                    }, 'Todos')
+                  ]
+                }),
+                new LinkHeaderSmall({
+                  class: 'linkHeader-a',
+                  onclick: ()=>this.handleFiltro('headerMasValorados'),
+                  children:[
+                    createElement('p', {
+                      id: 'headerMasValorados-a',
+                      class: '',
+                    }, 'Más valorados')
+                  ]
+                }),
+                new LinkHeaderSmall({
+                  class: 'linkHeader-a',
+                  onclick: ()=>this.handleFiltro('headerMenosValorados'),
+                  children:[
+                    createElement('p', {
+                      id: 'headerMenosValorados-a',
+                      class: '',
+                    }, 'Menos valorados')
+                  ]
+                }),
               ]
-            }),
-            new LinkHeaderSmall({
-              class: 'linkHeader-a',
-              onclick: ()=>this.handleFiltro('headerMenosValorados'),
-              children:[
-                createElement('p', {
-                  id: 'headerMenosValorados-a',
-                  class: '',
-                }, 'Menos valorados')
-              ]
-            }),
+            })
           ]
         })
       ]
     })
+    
   }
 }
 

@@ -13,6 +13,12 @@ class API {
     const data = await response.json()
     return data
   }
+  async movieDetalles(id) {
+    const response = await fetch(
+      `${this.baseAPI}movie/${id}?api_key=${this.API_KEY}`
+    );
+    return await response.json();
+  }
 }
 
 export default new API(API_KEY)

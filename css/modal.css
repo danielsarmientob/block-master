@@ -1,0 +1,127 @@
+.modal{
+    visibility: hidden;
+    display: flex;
+    opacity: 0;
+    background: rgba(0, 0, 0, .93);
+    position: fixed;
+    inset:0;
+    padding-inline: 1rem;
+    flex-direction: column;
+    transition: visibility 0s, opacity .3s;
+    overflow-y: auto;
+    padding-block: 3rem;
+    z-index: 2;
+}
+.contIconsClose{
+    text-align: end;
+    margin-inline-end: .5rem;
+}
+
+.contIconsClose img{
+    cursor: pointer;
+}
+.contenedorDatosGenerales {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.modalDescription{
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+}
+.modal .contButtonsSlider{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+}
+
+.titleModal{
+    font: var(--headline4);
+    color: var(--white);
+}
+
+.descriptionModal {
+    color: var(--white);
+}
+.contentDatos {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    gap: 1rem;
+    font: var(--body2);
+    color: var(--grey);
+}
+
+
+.contentDatos > span{
+    inline-size: auto;
+}
+.contentDatos > div {
+    margin-inline: .5rem;
+}
+
+
+.contBola{
+    display: inline-block;
+    block-size: 6px;
+    inline-size: 6px;
+    border-radius: 50%;
+    background: var(--grey);
+}
+
+.modal .movie {
+    inline-size: 10rem;
+    block-size: 15rem;
+    margin: auto;
+}
+
+
+
+.modal .movie  {
+    box-sizing: border-box;
+    perspective-origin: top;
+    animation: recommended 1s forwards;
+  }
+  
+  @keyframes recommended {
+    to {
+      transform: perspective(500px) rotate3d(1, 1,-1, 60deg);
+      /* transform: matrix(0.71, -0.41, 1.22, 0.71, 0, 0); */
+    }
+  }
+
+@media screen and (min-width: 990px){
+    .contentDatos {
+        display: flex;
+    }
+    .modal .movie {
+        inline-size: 200px;
+        block-size: 400px;
+        margin-inline-start: 50px;
+    }
+    .modalDescription{
+        margin: auto;
+        gap: 6rem;
+        flex-direction: row;
+    }
+    .contenedorDatosGenerales {
+        max-inline-size: 35rem;
+        gap: .5rem;
+        block-size: auto;
+        justify-content: center;
+    }
+    .modal .contButtonsSliderModal{
+        padding-block-start: 2.5rem;
+    }
+    .modal .contButtonsSlider{
+        flex-direction: row;
+    }
+
+    .contIconsClose{
+        inline-size: 90%;
+        margin: auto;
+    }
+    
+}

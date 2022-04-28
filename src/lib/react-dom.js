@@ -10,9 +10,10 @@ function render(element, container) {
     let childElement = element.build()
     container.append(childElement)
     element.componentDidMount()
-  }
+}
+
   
   
   export {
-    render
+    render,
   }

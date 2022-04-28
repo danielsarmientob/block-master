@@ -26,7 +26,6 @@ class Search extends Component {
       })
       const state = store.getState();
       const {search} =  state;
-      console.log('debug->', search)
       const imgNoEncontrado = document.querySelector('.contNoEncontrado');
       const msgNoEcontrado = document.querySelector('.spanImgNoEncontrada')
       console.log('query==>', query)

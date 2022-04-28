@@ -18,7 +18,8 @@ const initialState = {
   },
   search: [],
   isQuery: false,
-  query: ''
+  query: '',
+  movieSelect: null,
 }
 
 const store = createStore(reducer, initialState)

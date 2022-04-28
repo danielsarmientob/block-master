@@ -15,7 +15,7 @@ const IconButton = styled.img``
 class ContBotonesSlider extends Component {
     render(){
         return ContBotones({
-            class: 'contButtonsSlider',
+            class: 'contButtonsSlider contButtonsSliderModal',
             children: [
                 Button({
                     class: 'buttonSlider btn-yellow',

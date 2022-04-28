@@ -10,13 +10,12 @@ class Component {
     }
     // se llama andes que se renderice el componente
     componentWillMount() {
-  
     }
     componentDidMount() {
   
     }
     componentDidUpdate() {
-  
+      
     }
     setState(newState) {
       this.state = {
@@ -30,7 +29,6 @@ class Component {
       return this.render()
     }
   }
-  
   export {
     Component
   }

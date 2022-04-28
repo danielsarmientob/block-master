@@ -10,7 +10,7 @@ import Slider from './slider.js'
 import store from '../store.js';
 
 const AppStyled = styled.div`
-  overflow: hidden;
+  // overflow: hidden;
 `
 const contImgCarga = styled.div`
   text-align: center;
@@ -20,13 +20,16 @@ const img = styled.img``
 
 const contImgNoEncontrado = styled.div`
 `
-
+const divContent = styled.div``
 class App extends Component {
+  
   render() {
-    
+    // const movieSelect = store.getState().movieSelect;
     return AppStyled({
+      class: 'appStyled',
       children: [
         new Header(),
+        
         new Slider(),
        
         // new Actions({
@@ -52,7 +55,11 @@ class App extends Component {
               class: 'spanImgNoEncontrada'
             },'')
           ]
-        })
+        }),
+        // (movieSelect !== null)
+        // ? new Modal() 
+        // : createElement('div'),
+        // new Modal()
       ]
     })
   }

@@ -1,4 +1,4 @@
-import { ADD_MOVIES, SET_FILTER, SEARCH_MOVIE } from '../actions/index.js'
+import { ADD_MOVIES, SET_FILTER, SEARCH_MOVIE, SELECT_MOVIE } from '../actions/index.js'
 import { 
   getAllIds, 
   getLeastValuedIds, 
@@ -48,7 +48,8 @@ const reducer = (state, { type, payload }) => {
         },
         search: [],
         isQuery: false,
-        query: ''
+        query: '',
+        movieSelect: null,
       }
     }
     case SET_FILTER:
@@ -57,7 +58,8 @@ const reducer = (state, { type, payload }) => {
         filter: payload,
         search: [],
         isQuery: false,
-        query: ''
+        query: '',
+        movieSelect: null,
       }
     
     case SEARCH_MOVIE:
@@ -70,8 +72,15 @@ const reducer = (state, { type, payload }) => {
         },
         search:  searchMovie(payload, state.movieList, state.list.all),
         isQuery: true,
-        query: payload
+        query: payload,
+        movieSelect: null,
     }
+
+    case SELECT_MOVIE:
+      return {
+        ...state,
+        movieSelect: payload
+      }
     default:
       return state
   }
