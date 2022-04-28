@@ -55,7 +55,7 @@ class Slider extends Component {
                             id: 'img1',
                             children: ImgSlider({
                                 class: 'img',
-                                src: '../../images/mulan.png'
+                                src: './images/mulan.png'
                             })
                         }),
                         ScrollPage({
@@ -63,7 +63,7 @@ class Slider extends Component {
                             id: 'img2',
                             children: ImgSlider({
                                 class: 'img',
-                                src: '../../images/raya.png'
+                                src: './images/raya.png'
                             })
                         }),
                         ScrollPage({
@@ -71,7 +71,7 @@ class Slider extends Component {
                             id: 'img3',
                             children: ImgSlider({
                                 class: 'img',
-                                src: '../../images/unidos.png'
+                                src: './images/unidos.png'
                             })
                         }),
                         ScrollPage({
@@ -79,7 +79,7 @@ class Slider extends Component {
                             id: 'img4',
                             children: ImgSlider({
                                 class: 'img',
-                                src: '../../images/mulan.png'
+                                src: './images/mulan.png'
                             })
                         }),
                     ]

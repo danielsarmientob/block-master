@@ -24,7 +24,7 @@ class MovieSelect extends Component {
           class: 'movie-rate',
           children:[
             createElement('img',{
-              src: '../../icons/estrella.svg'
+              src: './icons/estrella.svg'
             },)
           ]
         }, vote_average)

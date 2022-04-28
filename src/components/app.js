@@ -49,7 +49,7 @@ class App extends Component {
           class: 'contNoEncontrado',
           children: [
             img({
-              src: '../../images/Searching.png'
+              src: './images/Searching.png'
             }),
             createElement('span',{
               class: 'spanImgNoEncontrada'

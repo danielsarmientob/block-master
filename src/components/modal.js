@@ -67,7 +67,7 @@ class Modal extends Component {
                 class: 'contIconsClose',
                 children:[
                     createElement('img',{
-                    src: '../../icons/close.svg'
+                    src: './icons/close.svg'
                     })
                 ]
                 }),

@@ -21,7 +21,7 @@ class ContBotonesSlider extends Component {
                     class: 'buttonSlider btn-yellow',
                     children:[
                         IconButton({
-                            src: '../../icons/iconReproducir.svg',
+                            src: './icons/iconReproducir.svg',
                         }),
                         createElement('p', {
                           },'VER AHORA'),
@@ -31,7 +31,7 @@ class ContBotonesSlider extends Component {
                     class: 'buttonSlider btn-black',
                     children:[
                         IconButton({
-                            src: '../../icons/iconMas.svg',
+                            src: './icons/iconMas.svg',
                         }),
                         createElement('p', {
                           },'VER DESPUÉS'),

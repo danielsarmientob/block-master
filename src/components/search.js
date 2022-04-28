@@ -57,7 +57,7 @@ class Search extends Component {
         }),
         new Button({
           children: [
-            ImagenButton({src: '../../icons/icon-search.svg'})
+            ImagenButton({src: './icons/icon-search.svg'})
           ]
         })
       ]

@@ -171,11 +171,11 @@ class Header extends Component {
                     children: [
                       HeaderMenuSmallIcons({
                         onclick: this.handleSearchSmall,
-                        src: '../../icons/icon-search-yellow.svg'
+                        src: './icons/icon-search-yellow.svg'
                       }),
                       HeaderMenuSmallIcons({
                         onclick: this.handleSmallMenu,
-                        src: '../../icons/menu.svg'
+                        src: './icons/menu.svg'
                       }),
                     ]
                   }),
@@ -185,7 +185,7 @@ class Header extends Component {
                     children: [
                       HeaderMenuSmallIcons({
                         onclick: this.handleBack,
-                        src: '../../icons/back.svg'
+                        src: './icons/back.svg'
                       }),
                       new Search(),
                     ]
