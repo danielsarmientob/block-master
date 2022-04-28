@@ -42,7 +42,6 @@ export function createElement(type, props, content) {
     Object.keys(props).forEach(prop => setProperties(prop, props[prop], element ))
   }
 
-  // console.log(Object.keys(props))
 
   return element
 }

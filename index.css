@@ -1,7 +1,6 @@
 :root {
     --fontPrimary: "Montserrat", sans-serif;
 
-    /* Colors */
     --black: #000000;
     --white: #ffffff;
     --backgroundHeader: #0f0e17; 
@@ -36,31 +35,5 @@
     --md: 1rem;
     --sm: 0.5rem;
     --top-card: var(--sm);
-    /* Sizes */
-    /* --xs: 0.25rem;
-    --sm: 0.5rem;
-    --md: 1rem;
-    --lg: 1.5rem;
-    --xlg: 2rem;
-    --xxlg: 2.5rem;
-  
-    --h-header: 3.5rem;
-    --w-icon: var(--lg);
-    --w-icon-sm: var(--md);
-    --w-card: 5rem;
-    --w-logo: 66.75px;
-    --w-spinner: var(--xxlg);
-    --gap-col: 0.75rem;
-    --gap-row: var(--md);
-    --gap-header: var(--lg);
-    --p-button: 10px var(--lg);
-    --top-card: var(--sm);
-    --section: var(--md);
-    --w-loader: 40px;
-    --border-loader: 4px;
-    --w-card-modal: 10rem;
-    --h-slider: 6.5rem;
-    --w-slider-button: 12px;
-    --w-size: 73rem;
-    --h-full: 100vh; */
+   
   }

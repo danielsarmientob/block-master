@@ -28,7 +28,6 @@ class Search extends Component {
       const {search} =  state;
       const imgNoEncontrado = document.querySelector('.contNoEncontrado');
       const msgNoEcontrado = document.querySelector('.spanImgNoEncontrada')
-      console.log('query==>', query)
       if(search.length === 0) {
         imgNoEncontrado.style.display = 'flex';
         msgNoEcontrado.textContent = `No se encontraron resultados para “${query}”`

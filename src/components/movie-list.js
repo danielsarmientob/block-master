@@ -47,14 +47,12 @@ class MovieList extends Component {
         //   // TODO: hacer aparecer la imagen de no encontrado
         //   // const imgNoEncontrado = document.querySelector('.contNoEncontrado');
         //   // imgNoEncontrado.style.display = 'flex';
-        //   // console.log('debug',search?.length)
         // }
       }
     }
   }
   componentDidMount() {
     // this.getPage(this.state.page)
-    // console.log('SetState',this.setState())
     store.subscribe(() => {
       this.setState()
     })
@@ -72,8 +70,7 @@ class MovieList extends Component {
     const state = store.getState()
     const movieListId = state.list[state.filter]
     const movieList = state.movieList
-    console.log(state)
-    console.log('debugg==>',movieList.get(718444))
+    // console.log('debugg==>',movieList.get(718444))
     return Wrapper({
       children: [
         MovieListStyled({

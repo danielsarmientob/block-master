@@ -48,7 +48,6 @@ class Modal extends Component {
 
     render(){
         const state = store.getState()
-        console.log('state====>',state)
         if(state.movieSelect){
             const {id, title='', overview='', release_date='', genres=[], runtime=0} = state.movieSelect;
             const movieList = state.movieList
